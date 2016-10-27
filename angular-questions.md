@@ -32,3 +32,27 @@ Explain what two-way data binding is.
 
 BONUS: Research the $digest loop
   We did that already
+
+Unit 1.4
+
+What are Angular expressions? How do they compare to tags from templating engines you've used before?
+  Angular expressions are like tags, which allows you to run JS expressions and functions like ejs did
+
+What happens when you write invalid code in an expression? What type of error do you get?
+  It just puts the whole handlebar expression out on your page without any evaluation, and breaks everything underneath it
+
+What are Angular filters? Describe what a filter does and then name four built-in filters, including one that we haven't used yet.
+  Angular filters change the way our data is viewed to the user, and the format at which you show it.
+  1) lowercase
+  2) uppercase
+  3) currency
+  4) json
+
+What's the syntax for filters?
+  You put it after a pipe in the handlebars
+
+Can you use more than one filter?
+  You absolutely can
+
+We'll soon see how to create custom filters. What is a use case for a custom filter?
+  Creating a filter that doesn't exist, but could benefit cleaner code with a predefined helper filter that makes your life easy

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
+  <title>Unit 1.4</title>
+</head>
+<body>
+
+  <h1>{{3.14159265359 | currency: '€'}}</h1>
+
+  <input type="text" ng-model="name">
+
+  <h2>Yelling: {{name | uppercase}}</h2>
+  <h2>Whispering: {{name | lowercase}}</h2>
+
+  <select name="num" ng-model="digit">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+
+  <h2>
+    <ng-pluralize count="digit"
+                  when="{'1': 'Here you go! The first {{digit}} digit of pi!',
+                        'other': 'Here you go! The first {{digit}} digits of pi!'}">
+    </ng-pluralize>
+  </h2>
+
+  <h2>{{3.14159265359 | number:digit}}</h2>
+
+  <h1>Tip Calculator</h1>
+
+  <input type="number" ng-model="calc">
+
+  <select name="tip" ng-model="tip">
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+
+  <h3>Subtotal: {{calc | currency}}</h3>
+  <h3>Tip: {{calc*(tip/100) | currency}}</h3>
+
+  <div>{{this}}</div>
+
+  <h1>MADLIB GAME</h1>
+
+  <input type="text" ng-model="boyname">
+  <input type="text" ng-model="adjective">
+  <input type="text" ng-model="pluralnoun1">
+  <input type="text" ng-model="pluralnoun2">
+  <input type="text" ng-model="insectplural">
+  <input type="text" ng-model="pluralnoun3">
+  <input type="text" ng-model="verbs">
+
+  <h3>I'm in love with <span>{{boyname | uppercase}}</span>. He's so <span>{{adjective | uppercase}}</span>! He has big flat <span>{{pluralnoun1 | uppercase}}</span>, and when our <span>{{pluralnoun2 | uppercase}}</span> meet, I get <span>{{insectplural | uppercase}}</span> in my stomach. I've fallen for him like a ton of <span>{{pluralnoun3 | uppercase}}</span>, and he <span>{{verbs | uppercase}}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+
+</body>
+</html>
