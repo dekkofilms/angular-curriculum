@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cameraShop">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Unit 1.5</title>
+</head>
+<body ng-init="symbols = ['&spades;', '&clubs;', '&hearts;', '&diams;']">
+  <ul>
+    <li ng-repeat="symbol in symbols">
+      {{symbol}}
+    </li>
+  </ul>
+
+  <ul ng-init="nums = [1, 1, 2, 5, 6, 9, 9, 9]">
+    <li ng-repeat="(id, num) in nums track by $index">
+      {{id}} : {{num}}
+    </li>
+  </ul>
+
+  <div ng-hide='3 + 4 == 7'>
+    3 + 4 isn't 5, don't show
+  </div>
+
+  <input type="password" ng-model="password">
+
+  <h3 ng-class="{valid: password.length > 5, invalid: password.length < 6}">
+    <ng-pluralize count="password.length"
+    when="{'0' : 'Your password is {{password.length}} characters',
+    '1' : 'Your password is {{password.length}} character',
+    'other' : 'Your password is {{password.length}} characters'}">
+
+    </ng-pluralize>
+  </h3>
+
+  <div ng-show="password.length < 6">
+    <h2>Password is invalid!</h2>
+  </div>
+  <div ng-show="password.length > 5">
+    <button>Sign Up!</button>
+  </div>
+
+  <div ng-controller="cameras">
+    <h1>Camera Shop</h1>
+    <select ng-model="sorter">
+      <option value="rating">Rating</option>
+      <option value="price">Price</option>
+    </select>
+
+    <div ng-repeat="camera in camerasArray | orderBy:sorter">
+      <h3>{{camera.title}}</h3>
+      <p ng-class="{sale: camera.onSale}">Price: {{camera.price | currency}}</p>
+      <p>Rating: {{camera.rating}}</p>
+      <img src={{camera.image}}></img>
+    </div>
+  </div>
+
+
+</body>
+</html>
