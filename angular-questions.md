@@ -91,3 +91,23 @@ Why do we pass in $scope as an argument to controller functions?
 
 In Express, what are Angular controllers most analogous to?
   It is most analogous too routes in a server, returning you different data based on when and where you put that call.
+
+Unit 1.7
+
+What is $rootScope?
+  The parent of $scope
+
+Explain how $scope is passed from a parent to child controller
+  It's like the mothership in Independence day, that has all the other little ships. When the parent goes down, all the other ships were dead.
+
+  It's passed similarly like a Class passes it's attributes to an instance.
+
+List five built in directives that create their own scope
+  ng-if
+  ng-controller
+  ng-repeat
+  ng-include
+  ng-switch
+
+"Scope becomes tricky when you try to 2 way data bind to a primitive defined on the parent scope from inside the child scope" - what does this mean?
+  Always create a new reference type that has primitive values. 
