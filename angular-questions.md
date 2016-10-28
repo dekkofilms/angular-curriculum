@@ -56,3 +56,38 @@ Can you use more than one filter?
 
 We'll soon see how to create custom filters. What is a use case for a custom filter?
   Creating a filter that doesn't exist, but could benefit cleaner code with a predefined helper filter that makes your life easy
+
+Unit 1.5
+
+What is the purpose of ng-init?
+  Allows you to evaluate an expression in the current scope
+
+Why use ng-src and ng-href?
+  ng-src will be a less buggy way to include a url in the img tag, ng-href will also be similar, and both make sure the user can go to the correct place ensuring angular has swept through the file already
+
+What are directives?
+  they are the ng tags
+
+Does ng-class require an object to be passed in?
+  no, there are three ways to use it. string, object, and array
+
+What order does an ng-repeat display items in?
+  top down
+How does ng-repeat handle duplicate data?
+  sucky ... you have to track by the index to ensure that it won't skip over the correct items.
+
+
+Unit 1.6
+
+What is $scope?
+  Is the global object that keeps our view variable up to date. It is what allows us two way data binding
+
+What are Angular modules? What's the syntax for defining a module?
+  -A module is a collection of services, directives, controllers, filters, and configuration information
+  -angular.module("firstApp", []);
+
+Why do we pass in $scope as an argument to controller functions?
+  Because that is what the docs says
+
+In Express, what are Angular controllers most analogous to?
+  It is most analogous too routes in a server, returning you different data based on when and where you put that call.

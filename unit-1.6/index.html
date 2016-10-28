@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <title>Unit 1.6</title>
+</head>
+<body ng-app="firstApp">
+  <div ng-controller="MyFirstController">
+    <h1>My name is: {{name}}</h1>
+    <input ng-model="name" type="text" placeholder="What is your name">
+  </div>
+
+  <div ng-controller="ExercisesController">
+    <h2>{{FavColor}}</h2>
+    <h3>{{secondsInACentury | number}}</h3>
+    <h3>{{rightNow | date:'fullDate'}}</h3>
+  </div>
+
+  <div ng-controller="madLib">
+
+
+  <h1>MADLIB GAME</h1>
+  <div ng-repeat='madlib in madlibs'>
+    <label for="boyname">{{ madlib.description}}</label>
+    <input type="text" ng-model="madlib.name">
+  </div>
+
+  <button ng-click="generate()">Generate!</button>
+  <div ng-show="generateBoo">
+    <h3>I'm in love with <span>{{ madlibs[0].name | uppercase}}</span>. He's so <span>{{madlibs[1].name | uppercase}}</span>! He has big flat <span>{{madlibs[2].name | uppercase}}</span>, and when our <span>{{madlibs[3].name | uppercase}}</span> meet, I get <span>{{madlibs[4].name | uppercase}}</span> in my stomach. I've fallen for him like a ton of <span>{{madlibs[5].name | uppercase}}</span>, and he <span>{{madlibs[6].name | uppercase}}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+    <button ng-click="playAgain()">Play again!</button>
+  </div>
+
+  </div>
+</body>
+</html>
