@@ -53,7 +53,10 @@
 
     <div ng-repeat="camera in camerasArray | orderBy:sorter">
       <h3>{{camera.title}}</h3>
-      <p ng-class="{sale: camera.onSale}">Price: {{camera.price | currency}}</p>
+      <div ng-switch="camera.onSale" ng-class="{sale: camera.onSale}">
+        <p ng-switch-when="true">Price: {{camera.price | currency}} ON SALE!!</p>
+        <p ng-switch-default>Price: {{camera.price | currency}}</p>
+      </div>
       <p>Rating: {{camera.rating}}</p>
       <img src={{camera.image}}></img>
     </div>
